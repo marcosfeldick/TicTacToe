@@ -15,6 +15,7 @@ public class App {
         System.out.println("Enter your placement (1-9):");
         int pos = scan.nextInt();
         System.out.println(pos);
+        placePiece(gameBoard, pos, "player");
         scan.close();
         printGameBoard(gameBoard);
     }
@@ -30,7 +31,7 @@ public class App {
 
     public static void placePiece(char[][] gameBoard, int pos, String user) {
        
-            char symbol = 'X';
+            char symbol = ' ';
 
             if (user.equals("player")) {
                 symbol = 'X';
