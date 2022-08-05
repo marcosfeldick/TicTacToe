@@ -14,11 +14,21 @@ public class App {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter your placement (1-9):");
         int pos = scan.nextInt();
-
         System.out.println(pos);
-
         scan.close();
+        printGameBoard(gameBoard);
+    }
 
+    public static void printGameBoard(char[][] gameBoard) {
+        for (char[] row : gameBoard) {
+            for (char c : row) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void placePiece(char[][] gameBoard, int pos, String user) {
         switch (pos) {
             case 1:
                 gameBoard[0][0] = 'X';
@@ -48,15 +58,6 @@ public class App {
                 gameBoard[4][4] = 'X';
                 break;
         }
-        printGameBoard(gameBoard);
     }
 
-    public static void printGameBoard(char[][] gameBoard) {
-        for (char[] row : gameBoard) {
-            for (char c : row) {
-                System.out.print(c);
-            }
-            System.out.println();
-        }
-    }
 }
